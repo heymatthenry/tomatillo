@@ -16,30 +16,21 @@ class Timer extends React.Component {
     super();
 
     this.state = {
-      isRunning: false,
       time: 0,
+      timer: null,
     };
   }
 
   toggleTimer() {
-    this.setState(
-      prevState => ({
-        isRunning: !prevState.isRunning,
-      }),
-      () => {
-        if (this.state.isRunning) {
-          this.startTimer();
-        }
-      }
-    );
-  }
-
-  startTimer() {
-    setInterval(() => {
-      this.setState(prevState => ({
-        time: prevState.time + 1,
-      }));
-    }, 1000);
+    this.setState(prevState => ({
+      timer: prevState.timer
+        ? clearInterval(prevState.timer)
+        : setInterval(() => {
+            this.setState(prevState => ({
+              time: prevState.time + 1,
+            }));
+          }, 1000),
+    }));
   }
 
   render() {
@@ -50,7 +41,7 @@ class Timer extends React.Component {
           className="btn btn-start-pause"
           onClick={this.toggleTimer.bind(this)}
         >
-          {this.state.isRunning ? 'Pause' : 'Start'}
+          {this.state.timer ? 'Pause' : 'Start'}
         </button>
       </div>
     );
