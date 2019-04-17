@@ -21,6 +21,12 @@ class Timer extends React.Component {
     };
   }
 
+  formatTime(time) {
+    const date = new Date(null);
+    date.setSeconds(time);
+    return date.toISOString().substr(11, 8);
+  }
+
   toggleTimer() {
     this.setState(prevState => ({
       timer: prevState.timer
@@ -36,7 +42,7 @@ class Timer extends React.Component {
   render() {
     return (
       <div id="timer">
-        <span className="display-time">{this.state.time}</span>
+        <span className="display-time">{this.formatTime(this.state.time)}</span>
         <button
           className="btn btn-start-pause"
           onClick={this.toggleTimer.bind(this)}
