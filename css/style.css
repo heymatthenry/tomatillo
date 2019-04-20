@@ -1,0 +1,69 @@
+::root {
+  font-size: 0.875em; /* 14px */
+}
+
+body {
+  background-color: #ecffc3;
+  background-image: linear-gradient(to bottom right, #ecffc3, #4f9b77);
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+}
+
+main {
+  background-color: #f5f0ef;
+  margin: 0 auto;
+  width: 90vw;
+  box-shadow: 0px 2px #2a5943;
+  border-radius: 1rem;
+  padding: 0 0 1rem 0;
+}
+
+header {
+  border-radius: 1rem 1rem 0 0;
+  background-color: #2a5943;
+}
+
+h1 {
+  color: #f5f0ef;
+  line-height: 2em;
+  text-align: center;
+}
+
+.display-time {
+  color: #3b444b;
+  display: block;
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: -1px -1px #dfdfdf;
+}
+
+.controls {
+  width: 80%;
+  margin: 1rem auto 0.5rem auto;
+}
+
+button {
+  background: #4f9b77;
+  background-image: linear-gradient(to bottom right, #2a5943, #4f9b77);
+  box-shadow: 0px 1px #ecffc3, inset 0px -2px #2a5943;
+  color: #f5f0ef;
+  font-size: 1.5rem;
+  border-radius: 0.2rem;
+  border: 0;
+  width: 50%;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+  text-shadow: 0px -1px #2a5943;
+}
+
+button:active {
+  box-shadow: 0;
+}
+
+@media (min-width: 750px) {
+  main {
+    width: 40vw;
+  }
+}

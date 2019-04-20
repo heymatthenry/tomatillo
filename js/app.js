@@ -6,7 +6,9 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <h1>Tomatillo</h1>
+        <header>
+          <h1>Tomatillo</h1>
+        </header>
         <Dashboard />
       </main>
     );
