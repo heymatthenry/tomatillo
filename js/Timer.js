@@ -8,11 +8,13 @@ export default class Timer extends Component {
       timer: null,
     };
   }
+
   formatTime(time) {
     const date = new Date(null);
     date.setSeconds(time);
     return date.toISOString().substr(11, 8);
   }
+
   toggleTimer() {
     this.setState(prevState => ({
       timer: prevState.timer
@@ -24,6 +26,7 @@ export default class Timer extends Component {
           }, 1000),
     }));
   }
+
   render() {
     return (
       <div id="timer">
